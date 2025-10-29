@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 from schemas.CreateTransaction import CreateTransactionDto, CreateTransactionResponse
 from dependencies import get_fragment_api
-from fragment_service import FragmentAPI
+from fragment.api import FragmentAPI
 
 
 router = APIRouter(

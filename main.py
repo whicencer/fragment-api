@@ -1,8 +1,14 @@
 from fastapi import FastAPI
 from routers import recipients, payments
-from fragment_service import FragmentAPI
+from fragment.api import FragmentAPI
 
-app = FastAPI(title='Fragment API', description='Hello')
+app = FastAPI(
+  title='Fragment API',
+  description=f'''
+  📂 GitHub: https://github.com/whicencer/fragment-api\n
+  Contact developer: https://t.me/whicencer
+  '''
+)
 
 @app.on_event('startup')
 def startup_event():
