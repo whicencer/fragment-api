@@ -1,5 +1,5 @@
 from fastapi import Request
-from fragment.api import FragmentAPI
+from fragment_service import FragmentAPI
 
 
 def get_fragment_api(request: Request) -> FragmentAPI:
