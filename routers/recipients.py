@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
-from fragment_service import FragmentAPI
+from fragment.api import FragmentAPI
 from dependencies import get_fragment_api
 from schemas.SearchRecipient import SearchRecipientDto, SearchRecipientResponse
 

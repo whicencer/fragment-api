@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 from schemas.CreateTransaction import CreateTransactionDto, CreateTransactionResponse
 from dependencies import get_fragment_api
-from fragment_service import FragmentAPI
+from fragment.api import FragmentAPI
 
 
 router = APIRouter(
@@ -20,8 +20,8 @@ async def create_transaction(dto: CreateTransactionDto, fragmentApi: FragmentAPI
       quantity=dto.quantity,
       wallet_account=dto.account
     )
-    if transaction is None:
-      return JSONResponse({ 'ok': False, 'error': 'Transaction was not created.' })
+    if error := transaction.get('error'):
+      return JSONResponse({ 'ok': False, 'error': error })
     
     return CreateTransactionResponse(
       ok=True,
