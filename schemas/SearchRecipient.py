@@ -3,8 +3,11 @@ from pydantic import BaseModel
 class SearchRecipientDto(BaseModel):
   username: str
 
-class SearchRecipientResponse(BaseModel):
-  ok: bool
+class RecipientModel(BaseModel):
   recipient_id: str
   name: str
   photo: str
+
+class SearchRecipientResponse(BaseModel):
+  ok: bool
+  recipient: RecipientModel

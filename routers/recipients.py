@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
 from fragment.api import FragmentAPI
 from dependencies import get_fragment_api
-from schemas.SearchRecipient import SearchRecipientDto, SearchRecipientResponse
+from schemas.SearchRecipient import SearchRecipientDto, SearchRecipientResponse, RecipientModel
 
 
 router = APIRouter(
@@ -21,9 +21,11 @@ async def searchRecipient(dto: SearchRecipientDto, fragmentApi: FragmentAPI = De
     
     return SearchRecipientResponse(
       ok=True,
-      recipient_id=recipient.get('recipient_id'),
-      name=recipient.get('name'),
-      photo=recipient.get('photo')
+      recipient=RecipientModel(
+        recipient_id=recipient.get('recipient_id'),
+        name=recipient.get('name'),
+        photo=recipient.get('photo')
+      )
     )
   except Exception as error:
     print(error)
