@@ -13,15 +13,15 @@ To copy cookies use [Cookie-Editor](https://chromewebstore.google.com/detail/coo
 
 2. Create `cookies.json` file and paste there cookies from Fragment:
 ```json
-   {
-    "stel_dt": "-120",
-    "stel_ssid": "YOUR_STEL_SSID_COOKIE",
-    "stel_token": "YOUR_STEL_TOKEN_COOKIE",
-    "stel_ton_token": "YOUR_STEL_TON_TOKEN_COOKIE"
-   }
+{
+   "stel_dt": "-120",
+   "stel_ssid": "YOUR_STEL_SSID_COOKIE",
+   "stel_token": "YOUR_STEL_TOKEN_COOKIE",
+   "stel_ton_token": "YOUR_STEL_TON_TOKEN_COOKIE"
+}
 ```
 
 3. Start FastAPI server:
 ```bash
-   python -m uvicorn main:app
+python -m uvicorn main:app
 ```
